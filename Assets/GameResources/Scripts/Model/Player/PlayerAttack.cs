@@ -8,6 +8,8 @@ public class PlayerAttack : BaseAttack
 {
     [SerializeField]
     private PlayerBullet _playerBulletPrefab;
+    [SerializeField]
+    private Transform _bulletSpawnPosition;
 
     private void Start()
     {
@@ -61,9 +63,17 @@ public class PlayerAttack : BaseAttack
         while (enemyIsAlive)
         {
             _baseTurner.LookOnTarget(targgetCharacter);
-            //Выстреливаем тут
+
+            PlayerBullet playerBullet = Instantiate(_playerBulletPrefab, _bulletSpawnPosition);
+            Debug.Log(1);
+            playerBullet.Init(targgetCharacter.transform, _timeToAttack / _attackSpeed);
+            Debug.Log(2);
+
             Animation();
+
+            Debug.Log(3);
             yield return new WaitForSeconds(_timeToAttack / _attackSpeed);
+            Debug.Log(4);
             enemyIsAlive = targgetCharacter.BaseHp.TakeDamage(_attackDamage);
         }
         if (!enemyIsAlive)

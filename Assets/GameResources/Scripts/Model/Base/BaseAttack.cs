@@ -24,7 +24,6 @@ public abstract class BaseAttack : MonoBehaviour
     [SerializeField]
     protected BoxCollider _triggerCollider;
 
-    [SerializeField]
     protected List<BaseCharacter> _enemies = new List<BaseCharacter>();
     protected CharacterTurner _baseTurner;
     protected string _targgerTag;

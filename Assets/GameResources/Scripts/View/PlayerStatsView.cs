@@ -23,7 +23,7 @@ public class PlayerStatsView : MonoBehaviour
     {
         _textAttackStrength.text = ((PlayerAttack)_baseCharacter.BaseAttack).AttackDamage.ToString();
         _textAttckSpeed.text = ((PlayerAttack)_baseCharacter.BaseAttack).AttackSpeed.ToString();
-        _textHp.text = ((PlayerHp)_baseCharacter.BaseHp).HP.ToString();
+        _textHp.text = ((PlayerHp)_baseCharacter.BaseHp).MaxHP.ToString();
         _textHpRecovery.text = ((PlayerHp)_baseCharacter.BaseHp).HPRegen.ToString();
     }
 }

@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class PlayerCharacter : BaseCharacter
 {
-    public bool IsAttack { get; private set; }
+    [SerializeField]
+    private BackgrondRotator _backgrondRotator;
     
     protected override void ChangeState(bool isAttack)
     {
-        IsAttack = isAttack;
+        _backgrondRotator.IsMove = !isAttack;
         base.ChangeState(isAttack);
     }
 }

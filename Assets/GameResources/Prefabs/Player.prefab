@@ -233,7 +233,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 0.1, z: 10}
+  m_Size: {x: 5, y: 0.1, z: 12}
   m_Center: {x: 0, y: -0.4, z: 0}
 --- !u!114 &3379611000475404726
 MonoBehaviour:
@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c47e9bcb3e1d6bc46a2a2dbde70a8864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _backgrondRotator: {fileID: 0}
 --- !u!114 &3379611000475404734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be035e10fd3add4b92e16faf3d7a29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sizeTriggerAttack: {x: 5, y: 0.1, z: 10}
+  _sizeTriggerAttack: {x: 5, y: 0.1, z: 12}
   _attackDamage: 1
   _attackSpeed: 1.5
   _timeToAttack: 2
@@ -311,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb058e0c5d163af40aed1913c0b015e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToRotate: 0.1
+  _timeToRotate: 0.2
 --- !u!54 &3845411048317332344
 Rigidbody:
   m_ObjectHideFlags: 0

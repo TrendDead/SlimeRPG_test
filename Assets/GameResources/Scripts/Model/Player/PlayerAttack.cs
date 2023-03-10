@@ -16,6 +16,7 @@ public class PlayerAttack : BaseAttack
     [SerializeField]
     private CoinCounter _coinCounter;
 
+
     private void Start()
     {
         _targgerTag = EMENY;
@@ -91,10 +92,5 @@ public class PlayerAttack : BaseAttack
     private void OnDestroy()
     {
         StopCoroutine(Attack(null));
-    }
-
-    protected override void Animation()
-    {
-        
     }
 }

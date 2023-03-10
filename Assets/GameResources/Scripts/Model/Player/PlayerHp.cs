@@ -33,11 +33,6 @@ public class PlayerHp : BaseHp
         StopCoroutine(HPRegenerator(_timeToRegen));
     }
 
-    protected override void Animation()
-    {
-        
-    }
-
     public void UpHpMax(float up)
     {
         _maxHP += up;
@@ -54,6 +49,7 @@ public class PlayerHp : BaseHp
     private void AddHp(float addHp)
     {
         _hp = _hp + addHp <= _maxHP ? _hp + addHp : _maxHP;
+        _hpView.ChangeHP(_hp, _maxHP);
         //_hpView.UpdateHpInfo();
         //_hpBatText.text = Math.Round(_hp, 2).ToString();
         //_hpBar.fillAmount = _hp / _maxHp;

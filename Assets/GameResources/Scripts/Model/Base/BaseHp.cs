@@ -11,6 +11,8 @@ public abstract class BaseHp : MonoBehaviour
     protected float _hp;
     [SerializeField]
     protected HpView _hpView;
+    [SerializeField]
+    private AnimationController _animationController;
 
     private void OnEnable()
     {
@@ -34,5 +36,8 @@ public abstract class BaseHp : MonoBehaviour
         return true;
     }
 
-    protected abstract void Animation();
+    protected virtual void Animation()
+    {
+        _animationController.StartAnimationDamage();
+    }
 }

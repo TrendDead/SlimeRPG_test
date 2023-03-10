@@ -23,6 +23,8 @@ public abstract class BaseAttack : MonoBehaviour
     protected float _timeToAttack;
     [SerializeField]
     protected BoxCollider _triggerCollider;
+    [SerializeField]
+    private AnimationController _animationController;
 
     protected List<BaseCharacter> _enemies = new List<BaseCharacter>();
     protected CharacterTurner _baseTurner;
@@ -74,5 +76,8 @@ public abstract class BaseAttack : MonoBehaviour
 
     protected abstract IEnumerator Attack(BaseCharacter targgetCharacter);
 
-    protected abstract void Animation();
+    protected virtual void Animation()
+    {
+        _animationController.StartAnimationAttack();
+    }
 }

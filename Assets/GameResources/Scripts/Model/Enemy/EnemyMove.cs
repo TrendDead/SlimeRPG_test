@@ -10,6 +10,7 @@ public class EnemyMove : BaseMove
     public override void Action(bool isAction)
     {
         _isMove = isAction;
+        Animation(_isMove);
         // Тут запускаем анимацию
     }
     private void Update()
@@ -18,10 +19,5 @@ public class EnemyMove : BaseMove
         {
             transform.position += Vector3.left * _moveSpeed * Time.deltaTime;
         }
-    }
-
-    protected override void Animation()
-    {
-       
     }
 }

@@ -49,11 +49,6 @@ public class MeleeEnemyAttack : BaseAttack
     //    }
     //}
 
-    protected override void Animation()
-    {
-        
-    }
-
     protected override IEnumerator Attack(BaseCharacter targgetCharacter)
     {
         bool enemyIsAlive = true;
@@ -61,10 +56,15 @@ public class MeleeEnemyAttack : BaseAttack
         while (enemyIsAlive)
         {
             _baseTurner.LookOnTarget(targgetCharacter);
-            //Ѕъем тут
+
             Animation();
-            yield return new WaitForSeconds(_timeToAttack / _attackSpeed);
+
+            //FIXME: —верх костыльненько, ждем середины анимации атаки, ѕќѕ–ј¬»“№!!
+            yield return new WaitForSeconds(0.3f);
+
             enemyIsAlive = targgetCharacter.BaseHp.TakeDamage(_attackDamage);
+
+            yield return new WaitForSeconds(_timeToAttack / _attackSpeed);
         }
         if (!enemyIsAlive)
         {

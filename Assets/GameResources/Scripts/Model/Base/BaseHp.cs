@@ -15,14 +15,16 @@ public abstract class BaseHp : MonoBehaviour
     private void OnEnable()
     {
         _hp = _maxHP;
+        _hpView.ChangeHP(_hp, _maxHP);
     }
 
     public bool TakeDamage(float damage)
     {
         _hp -= damage;
 
+        _hpView.ChangeHP(_hp, _maxHP, damage);
+
         Animation();
-        //_hpView.ShowDamage(damage, _hp);
 
         if (_hp <= 0)
         {

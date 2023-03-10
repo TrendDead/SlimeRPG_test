@@ -19,7 +19,7 @@ public class PlayerBullet : MonoBehaviour
         }
         catch (System.Exception)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 

@@ -6,6 +6,9 @@ using UnityEngine;
 /// </summary>
 public class PlayerHp : BaseHp
 {
+    public float HP => _hp;
+    public float HPRegen => _hpRegen;
+
     [SerializeField]
     private float _hpRegen;
     [SerializeField]

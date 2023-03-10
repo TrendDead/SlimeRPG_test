@@ -6,10 +6,15 @@ using System.Collections;
 /// </summary>
 public class PlayerAttack : BaseAttack
 {
+    public float AttackDamage => _attackDamage;
+    public float AttackSpeed => _attackSpeed;
+
     [SerializeField]
     private PlayerBullet _playerBulletPrefab;
     [SerializeField]
     private Transform _bulletSpawnPosition;
+    [SerializeField]
+    private CoinCounter _coinCounter;
 
     private void Start()
     {
@@ -65,19 +70,16 @@ public class PlayerAttack : BaseAttack
             _baseTurner.LookOnTarget(targgetCharacter);
 
             PlayerBullet playerBullet = Instantiate(_playerBulletPrefab, _bulletSpawnPosition);
-            Debug.Log(1);
             playerBullet.Init(targgetCharacter.transform, _timeToAttack / _attackSpeed);
-            Debug.Log(2);
 
             Animation();
 
-            Debug.Log(3);
             yield return new WaitForSeconds(_timeToAttack / _attackSpeed);
-            Debug.Log(4);
             enemyIsAlive = targgetCharacter.BaseHp.TakeDamage(_attackDamage);
         }
         if (!enemyIsAlive)
         {
+            _coinCounter.AddCoin(1);
             IsEnemyDead(targgetCharacter);
             if(_enemies.Count > 0)
             {

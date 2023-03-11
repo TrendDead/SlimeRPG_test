@@ -65,6 +65,7 @@ public class PlayerAttack : BaseAttack
     protected override IEnumerator Attack(BaseCharacter targgetCharacter)
     {
         bool enemyIsAlive = true;
+        int coinsForEnemy = ((EnemyCharacter)targgetCharacter).CoinForDeath;
 
         while (enemyIsAlive)
         {
@@ -80,7 +81,7 @@ public class PlayerAttack : BaseAttack
         }
         if (!enemyIsAlive)
         {
-            _coinCounter.AddCoin(1);
+            _coinCounter.AddCoin(coinsForEnemy);
             IsEnemyDead(targgetCharacter);
             if(_enemies.Count > 0)
             {

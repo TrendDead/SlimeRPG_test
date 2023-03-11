@@ -19,14 +19,6 @@ public class BackgrondRotator : MonoBehaviour
         _meshOffset = _meshRenderer[0].sharedMaterial.mainTextureOffset;
     }
 
-    private void OnDisable()
-    {
-        foreach (var mesh in _meshRenderer)
-        {
-            mesh.sharedMaterial.mainTextureOffset = _meshOffset;
-        }
-    }
-
     private void Update()
     {
         if(IsMove)

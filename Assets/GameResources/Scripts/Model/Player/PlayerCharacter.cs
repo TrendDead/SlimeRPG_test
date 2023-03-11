@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : BaseCharacter
 {
@@ -9,5 +10,10 @@ public class PlayerCharacter : BaseCharacter
     {
         _backgrondRotator.IsMove = !isAttack;
         base.ChangeState(isAttack);
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

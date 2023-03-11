@@ -22,7 +22,7 @@ public class PlayerSkillsUp : MonoBehaviour
         if (isSucsess)
         {
             _requirementsForUp[0] += 1;
-            ((PlayerAttack)_baseCharacter.BaseAttack).UpAttackDamage(0.1f);
+            ((PlayerAttack)_baseCharacter.BaseAttack).UpAttackDamage(0.2f);
             _playerStatsView.UpdateInfo();
             _coinsToUpView.UpdateInfo(_requirementsForUp);
         }
@@ -34,7 +34,7 @@ public class PlayerSkillsUp : MonoBehaviour
         if (isSucsess)
         {
             _requirementsForUp[1] += 1;
-            ((PlayerAttack)_baseCharacter.BaseAttack).UpAttackSpeed(0.1f);
+            ((PlayerAttack)_baseCharacter.BaseAttack).UpAttackSpeed(0.5f);
             _playerStatsView.UpdateInfo();
             _coinsToUpView.UpdateInfo(_requirementsForUp);
         }
@@ -46,7 +46,7 @@ public class PlayerSkillsUp : MonoBehaviour
         if (isSucsess)
         {
             _requirementsForUp[2] += 1;
-            ((PlayerHp)_baseCharacter.BaseHp).UpHpMax(1f);
+            ((PlayerHp)_baseCharacter.BaseHp).UpHpMax(2f);
             _playerStatsView.UpdateInfo();
             _coinsToUpView.UpdateInfo(_requirementsForUp);
         }
@@ -58,7 +58,7 @@ public class PlayerSkillsUp : MonoBehaviour
         if (isSucsess)
         {
             _requirementsForUp[3] += 1;
-            ((PlayerHp)_baseCharacter.BaseHp).UpHpRegen(0.1f);
+            ((PlayerHp)_baseCharacter.BaseHp).UpHpRegen(0.2f);
             _playerStatsView.UpdateInfo();
             _coinsToUpView.UpdateInfo(_requirementsForUp);
         }

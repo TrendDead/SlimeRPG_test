@@ -8,7 +8,7 @@ public class CharacterTurner : MonoBehaviour
 
     protected Quaternion _quaternion;
 
-    private void Start()
+    private void Awake()
     {
         _quaternion = transform.rotation;
     }

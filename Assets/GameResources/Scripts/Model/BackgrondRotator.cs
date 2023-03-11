@@ -13,6 +13,7 @@ public class BackgrondRotator : MonoBehaviour
     private MeshRenderer[] _meshRenderer;
 
     private Vector2 _meshOffset;
+    private float _timer = 0;
 
     private void Start()
     {
@@ -23,9 +24,10 @@ public class BackgrondRotator : MonoBehaviour
     {
         if(IsMove)
         {
+            _timer += Time.deltaTime;
             foreach (var mesh in _meshRenderer)
             {
-                mesh.sharedMaterial.mainTextureOffset = new Vector2(Mathf.Repeat(Time.time * _speed, 1), _meshOffset.y);
+                mesh.sharedMaterial.mainTextureOffset = new Vector2(Mathf.Repeat(_timer * _speed, 1), _meshOffset.y);
             }
         }
     }

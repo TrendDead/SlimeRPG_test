@@ -52,6 +52,9 @@ public class GameController : MonoBehaviour
                 Vector3 spawnPoint = new Vector3(_spawnEnemyPosition.position.x + i + 0.5f, 0f, Random.Range(-1.5f, 1.5f));
                 var enemy = Instantiate(_enemyPrefab, _spawnEnemyPosition);
                 enemy.transform.position = spawnPoint;
+                EnemySkillsUp skillsUp = enemy.GetComponent<EnemySkillsUp>();
+                skillsUp.UpAllkills((_levelCount - 1) * (_levelCount - 1));
+                skillsUp.UpCoinsToDeath(_levelCount - 1);
                 _enemies.Add(enemy);
                 enemy.IsDead += CheckLevelStatus;
             }
@@ -59,6 +62,10 @@ public class GameController : MonoBehaviour
         else
         {
             var enemy = Instantiate(_enemyBossPrefab, _spawnEnemyPosition);
+            EnemySkillsUp skillsUp = enemy.GetComponent<EnemySkillsUp>();
+            skillsUp.UpAllkills((_levelCount - 1) * 2);
+            skillsUp.UpCoinsToDeath(_levelCount - 1);
+            skillsUp.UpHpMaxUp(10 * (_levelCount - 1));
             _enemies.Add(enemy);
             enemy.IsDead += CheckLevelStatus;
         }

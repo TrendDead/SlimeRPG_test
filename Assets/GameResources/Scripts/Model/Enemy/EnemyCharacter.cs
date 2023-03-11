@@ -9,6 +9,11 @@ public class EnemyCharacter : BaseCharacter
     [SerializeField]
     private int _coinForDeath = 1;
 
+    public void UpCoinForDeath(int up)
+    {
+        _coinForDeath += up;
+    }
+
     private void OnDestroy()
     {
         IsDead?.Invoke(this);

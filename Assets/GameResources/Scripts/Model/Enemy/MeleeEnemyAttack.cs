@@ -9,6 +9,16 @@ public class MeleeEnemyAttack : BaseAttack
         _triggerCollider.isTrigger = false;
     }
 
+    public void UpAttackDamage(float up)
+    {
+        _attackDamage += up;
+    }
+
+    public void UpAttackSpeed(float up)
+    {
+        _attackSpeed += up;
+    }
+
     public override void Action(bool isAction)
     {
         if (isAction)

@@ -26,13 +26,11 @@ public class PlayerAttack : BaseAttack
     public void UpAttackDamage(float up)
     {
         _attackDamage += up;
-        //Отобразить повышение дамага
     }
 
     public void UpAttackSpeed(float up)
     {
         _attackSpeed += up;
-        //Отобразить повышение скорости дамага
     }
 
     public override void Action(bool isAction)

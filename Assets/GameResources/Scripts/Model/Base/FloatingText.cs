@@ -20,18 +20,17 @@ public class FloatingText : MonoBehaviour
         StartCoroutine(LifeTime());
     }
 
-    //TODO: Сделать постепенное исчезновение
     private IEnumerator LifeTime()
     {
-        Vector3 startPostiton = GetComponentInParent<Transform>().localPosition;
+        Vector3 startPostiton = GetComponentInParent<Transform>().position;
         Vector3 highestPosition = startPostiton + (Vector3.up * _liftingHeight);
 
         for (float i = 0; i < _lifeTime; i += Time.deltaTime)
         {
             float lerp = i / _lifeTime;
 
-
-            transform.localPosition = new Vector3(startPostiton.x, Mathf.Lerp(startPostiton.y, highestPosition.y, lerp), startPostiton.z);
+            transform.position = new Vector3(startPostiton.x, Mathf.Lerp(startPostiton.y, highestPosition.y, lerp), startPostiton.z);
+            _damageText.color = new Color(_damageText.color.r, _damageText.color.g, _damageText.color.b, Mathf.Lerp(1, 0, lerp));
 
             yield return null;
         }

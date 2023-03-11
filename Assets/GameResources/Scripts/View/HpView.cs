@@ -36,7 +36,7 @@ public class HpView : MonoBehaviour
         if (takenDamage != 0)
         {
             var text = Instantiate(_floatingTextPrefab, _floatingTextPositionStart);
-            text.transform.localPosition = _floatingTextPositionStart.position;
+            //text.transform.localPosition = _floatingTextPositionStart.position;
             text.UpdateText(Math.Round(takenDamage, 2).ToString());
         }
     }

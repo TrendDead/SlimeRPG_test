@@ -71,6 +71,14 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        foreach (var enemy in _enemies)
+        {
+            enemy.IsDead -= CheckLevelStatus;
+        }
+    }
+
     private void CheckLevelStatus(EnemyCharacter deadEnemy)
     {
         _enemies.Remove(deadEnemy);

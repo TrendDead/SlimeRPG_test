@@ -74,15 +74,17 @@ public class MeleeEnemyAttack : BaseAttack
 
             enemyIsAlive = targgetCharacter.BaseHp.TakeDamage(_attackDamage);
 
-            yield return new WaitForSeconds(_timeToAttack / _attackSpeed);
-        }
-        if (!enemyIsAlive)
-        {
-            IsEnemyDead(targgetCharacter);
-            if (_enemies.Count > 0)
+            if (!enemyIsAlive)
             {
-                Action(true);
+                IsEnemyDead(targgetCharacter);
+
+                if (_enemies.Count > 0)
+                {
+                    Action(true);
+                }
             }
+
+            yield return new WaitForSeconds(_timeToAttack / _attackSpeed);
         }
     }
 }
